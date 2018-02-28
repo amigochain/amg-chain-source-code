@@ -1,0 +1,9 @@
+Building Amigochain
+
+See doc/readme-qt.rst for instructions on building Amigochain QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Amigochain.
+
+See doc/build-*.txt for instructions on building amigochaind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Amigochain.
