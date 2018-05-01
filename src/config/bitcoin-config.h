@@ -8,6 +8,9 @@
 /* Define if building universal (internal helper macro) */
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
 
+/* Amigo version */
+#define CLIENT_VERSION_AMIGO 3
+
 /* Version Build */
 #define CLIENT_VERSION_BUILD 0
 
@@ -22,9 +25,6 @@
 
 /* Build revision */
 #define CLIENT_VERSION_REVISION 0
-
-/* Amigo version */
-#define CLIENT_VERSION_AMIGO 3
 
 /* Copyright holder(s) before %s replacement */
 #define COPYRIGHT_HOLDERS "The %s developers"

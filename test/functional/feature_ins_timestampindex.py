@@ -9,11 +9,11 @@
 
 import time
 
-from test_framework.test_particl import ParticlTestFramework
+from test_framework.test_amigo import AmigoTestFramework
 from test_framework.util import *
 
 
-class TimestampIndexTest(ParticlTestFramework):
+class TimestampIndexTest(AmigoTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 4

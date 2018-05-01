@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018 The Particl Core developers
+# Copyright (c) 2018 The Amigo Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_particl import ParticlTestFramework
-from test_framework.test_particl import isclose
+from test_framework.test_amigo import AmigoTestFramework
+from test_framework.test_amigo import isclose
 from test_framework.util import *
 
-class WalletRPCTest(ParticlTestFramework):
+class WalletRPCTest(AmigoTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

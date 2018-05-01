@@ -1,17 +1,17 @@
 [Unit]
-Description=Particl daemon
+Description=Amigo daemon
 After=network.target
 
 [Service]
-User=particl
-Group=particl
+User=amigo
+Group=amigo
 
 Type=forking
-PIDFile=/home/particl/.particl/particld.pid
-ExecStart=/home/particl/Particl/particld -daemon -pid=/home/particl/.particl/particld.pid \
--conf=/home/particl/.particl/particl.conf -datadir=/home/particl/.particl
+PIDFile=/home/amigo/.amigo/amigod.pid
+ExecStart=/home/amigo/Amigo/amigod -daemon -pid=/home/amigo/.amigo/amigod.pid \
+-conf=/home/amigo/.amigo/amigo.conf -datadir=/home/amigo/.amigo
 
-ExecStop=/home/particl/Particl/particl-cli -conf=/home/particl/.particl/particl.conf stop
+ExecStop=/home/amigo/Amigo/amigo-cli -conf=/home/amigo/.amigo/amigo.conf stop
 ExecStop=/usr/bin/sleep 25
 
 Restart=no

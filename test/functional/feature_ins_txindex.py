@@ -7,12 +7,12 @@
 # Test txindex generation and fetching
 #
 
-from test_framework.test_particl import ParticlTestFramework
+from test_framework.test_amigo import AmigoTestFramework
 from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *
 
-class TxIndexTest(ParticlTestFramework):
+class TxIndexTest(AmigoTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 4

@@ -1,33 +1,36 @@
-Name NovaCoin
+Name "Amigo Core (32-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.3.0
-!define COMPANY "NovaCoin project"
-!define URL http://www.novacoin.ru/
+!define VERSION 0.16.0.@CLIENT_VERSION_AMIGO@
+!define COMPANY "Amigo Core project"
+!define URL https://amigo.io/
 
 # MUI Symbol Definitions
-!define MUI_ICON "../share/pixmaps/novacoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/d/development/projects/test/amg-chain-source-code/share/pixmaps/amigo.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/d/development/projects/test/amg-chain-source-code/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "../share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/d/development/projects/test/amg-chain-source-code/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER NovaCoin
-#!define MUI_FINISHPAGE_RUN $INSTDIR\novacoin-qt.exe
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Amigo Core"
+!define MUI_FINISHPAGE_RUN $INSTDIR\amigo-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/d/development/projects/test/amg-chain-source-code/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
+!if "32" == "64"
+!include x64.nsh
+!endif
 
 # Variables
 Var StartMenuGroup
@@ -45,14 +48,19 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile novacoin-0.3.0-win32-setup.exe
-InstallDir $PROGRAMFILES\NovaCoin
+OutFile /d/development/projects/test/amg-chain-source-code/amigo-${VERSION}-win32-setup.exe
+!if "32" == "64"
+InstallDir $PROGRAMFILES64\Amigo
+!else
+InstallDir $PROGRAMFILES\Amigo
+!endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.3.0.0
-VIAddVersionKey ProductName NovaCoin
+# VIProductVersion ${VERSION}.0
+VIProductVersion ${VERSION}
+VIAddVersionKey ProductName "Amigo Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -66,19 +74,16 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    #File ../release/novacoin-qt.exe
-    File /oname=license.txt ../COPYING
-    File /oname=readme.txt ../doc/README_windows.txt
+    File /d/development/projects/test/amg-chain-source-code/release/amigo-qt.exe
+    File /oname=COPYING.txt /d/development/projects/test/amg-chain-source-code/COPYING
+    File /oname=readme.txt /d/development/projects/test/amg-chain-source-code/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File ../src/novacoind.exe
-    SetOutPath $INSTDIR\src
-    File /r /x *.exe /x *.o ../src\*.*
+    File /d/development/projects/test/amg-chain-source-code/release/amigod.exe
+    File /d/development/projects/test/amg-chain-source-code/release/amigo-cli.exe
+    SetOutPath $INSTDIR\doc
+    File /r /d/development/projects/test/amg-chain-source-code/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
-
-    # Remove old wxwidgets-based-bitcoin executable and locales:
-    #Delete /REBOOTOK $INSTDIR\novacoin.exe
-    #RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
 Section -post SEC0001
@@ -87,7 +92,9 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall NovaCoin.lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\amigo-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Amigo Core (testnet, 32-bit).lnk" "$INSTDIR\amigo-qt.exe" "-testnet" "$INSTDIR\amigo-qt.exe" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -97,12 +104,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-
-    # bitcoin: URI handling disabled for 0.6.0
-    #    WriteRegStr HKCR "bitcoin" "URL Protocol" ""
-    #    WriteRegStr HKCR "bitcoin" "" "URL:Bitcoin"
-    #    WriteRegStr HKCR "bitcoin\DefaultIcon" "" $INSTDIR\bitcoin-qt.exe
-    #    WriteRegStr HKCR "bitcoin\shell\open\command" "" '"$INSTDIR\bitcoin-qt.exe" "$$1"'
+    WriteRegStr HKCR "amigo" "URL Protocol" ""
+    WriteRegStr HKCR "amigo" "" "URL:Amigo"
+    WriteRegStr HKCR "amigo\DefaultIcon" "" $INSTDIR\amigo-qt.exe
+    WriteRegStr HKCR "amigo\shell\open\command" "" '"$INSTDIR\amigo-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -120,19 +125,20 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    #Delete /REBOOTOK $INSTDIR\novacoin-qt.exe
-    Delete /REBOOTOK $INSTDIR\license.txt
+    Delete /REBOOTOK $INSTDIR\amigo-qt.exe
+    Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
-    RMDir /r /REBOOTOK $INSTDIR\src
+    RMDir /r /REBOOTOK $INSTDIR\doc
     DeleteRegValue HKCU "${REGKEY}\Components" Main
 SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall NovaCoin.lnk"
-    #Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Bitcoin.lnk"
-    #Delete /REBOOTOK "$SMSTARTUP\Bitcoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Amigo Core (testnet, 32-bit).lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Amigo.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -140,7 +146,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "novacoin"
+    DeleteRegKey HKCR "amigo"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0
@@ -153,6 +159,15 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
+!if "32" == "64"
+    ${If} ${RunningX64}
+      ; disable registry redirection (enable access to 64-bit portion of registry)
+      SetRegView 64
+    ${Else}
+      MessageBox MB_OK|MB_ICONSTOP "Cannot install 64-bit version on a 32-bit system."
+      Abort
+    ${EndIf}
+!endif
 FunctionEnd
 
 # Uninstaller functions
