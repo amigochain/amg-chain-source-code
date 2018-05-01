@@ -1,0 +1,36 @@
+bench/bench_bench_amigo-perf.o: bench/perf.cpp bench/perf.h \
+ d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stdint.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/stdint.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/crtdefs.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_mac.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_secapi.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/vadefs.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_directx.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h \
+ d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stddef.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/stddef.h
+
+bench/perf.h:
+
+d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stdint.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/stdint.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/crtdefs.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_mac.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_secapi.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/vadefs.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_directx.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h:
+
+d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stddef.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/stddef.h:

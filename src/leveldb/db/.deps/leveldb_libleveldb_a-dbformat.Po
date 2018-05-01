@@ -1,0 +1,328 @@
+leveldb/db/leveldb_libleveldb_a-dbformat.o: leveldb/db/dbformat.cc \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/stdio.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/crtdefs.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_mac.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_secapi.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/vadefs.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_directx.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_print_push.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_off_t.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/swprintf.inl \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/stdio_s.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_print_pop.h \
+ leveldb/db/dbformat.h leveldb/include/leveldb/comparator.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/string \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/c++config.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/os_defines.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/cpu_defines.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stringfwd.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/memoryfwd.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/char_traits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_algobase.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/functexcept.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/exception_defines.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/cpp_type_traits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/type_traits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/numeric_traits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_pair.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/move.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/concept_check.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/type_traits \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_iterator_base_types.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_iterator_base_funcs.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/debug/debug.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_iterator.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/ptr_traits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/predefined_ops.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/postypes.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cwchar \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/wchar.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_stat64.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/wchar_s.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cstdint \
+ d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stdint.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/stdint.h \
+ d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stddef.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/stddef.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/allocator.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/c++allocator.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/new_allocator.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/new \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/exception \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/atomic_lockfree_defines.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/exception_ptr.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/nested_exception.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/localefwd.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/c++locale.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/clocale \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/locale.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/iosfwd \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cctype \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/ctype.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/ostream_insert.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/cxxabi_forced.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_function.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/backward/binders.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/range_access.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/basic_string.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/atomicity.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/gthr.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/gthr-default.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/errno.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sys/types.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/process.h \
+ d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include-fixed/limits.h \
+ d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include-fixed/syslimits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/limits.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/signal.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread_signal.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sys/timeb.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/sys/timeb_s.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread_compat.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread_unistd.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/atomic_word.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/initializer_list \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/string_conversions.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cstdlib \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/stdlib.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/stdlib_s.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/malloc.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cstdio \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cerrno \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/functional_hash.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/hash_bytes.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/basic_string.tcc \
+ leveldb/include/leveldb/db.h leveldb/include/leveldb/iterator.h \
+ leveldb/include/leveldb/slice.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/assert.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/string.h \
+ d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/string_s.h \
+ leveldb/include/leveldb/status.h leveldb/include/leveldb/options.h \
+ leveldb/include/leveldb/filter_policy.h \
+ leveldb/include/leveldb/table_builder.h leveldb/util/coding.h \
+ leveldb/port/port.h leveldb/port/port_win.h leveldb/util/logging.h
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/stdio.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/crtdefs.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_mac.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_secapi.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/vadefs.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_directx.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_print_push.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_off_t.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/swprintf.inl:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/stdio_s.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_print_pop.h:
+
+leveldb/db/dbformat.h:
+
+leveldb/include/leveldb/comparator.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/string:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/c++config.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/os_defines.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/cpu_defines.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stringfwd.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/memoryfwd.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/char_traits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_algobase.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/functexcept.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/exception_defines.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/cpp_type_traits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/type_traits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/numeric_traits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_pair.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/move.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/concept_check.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/type_traits:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_iterator_base_types.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_iterator_base_funcs.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/debug/debug.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_iterator.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/ptr_traits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/predefined_ops.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/postypes.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cwchar:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/wchar.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/_mingw_stat64.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/wchar_s.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cstdint:
+
+d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stdint.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/stdint.h:
+
+d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include/stddef.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/stddef.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/allocator.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/c++allocator.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/new_allocator.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/new:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/exception:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/atomic_lockfree_defines.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/exception_ptr.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/nested_exception.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/localefwd.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/c++locale.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/clocale:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/locale.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/iosfwd:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cctype:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/ctype.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/ostream_insert.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/cxxabi_forced.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/stl_function.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/backward/binders.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/range_access.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/basic_string.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/atomicity.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/gthr.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/gthr-default.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/errno.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sys/types.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/process.h:
+
+d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include-fixed/limits.h:
+
+d:/development/compiler/mingw32/lib/gcc/i686-w64-mingw32/4.9.2/include-fixed/syslimits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/limits.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/signal.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread_signal.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sys/timeb.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/sys/timeb_s.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread_compat.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/pthread_unistd.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/i686-w64-mingw32/bits/atomic_word.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/initializer_list:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/ext/string_conversions.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cstdlib:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/stdlib.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/stdlib_s.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/malloc.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cstdio:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/cerrno:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/functional_hash.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/hash_bytes.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/c++/bits/basic_string.tcc:
+
+leveldb/include/leveldb/db.h:
+
+leveldb/include/leveldb/iterator.h:
+
+leveldb/include/leveldb/slice.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/assert.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/string.h:
+
+d:/development/compiler/mingw32/i686-w64-mingw32/include/sec_api/string_s.h:
+
+leveldb/include/leveldb/status.h:
+
+leveldb/include/leveldb/options.h:
+
+leveldb/include/leveldb/filter_policy.h:
+
+leveldb/include/leveldb/table_builder.h:
+
+leveldb/util/coding.h:
+
+leveldb/port/port.h:
+
+leveldb/port/port_win.h:
+
+leveldb/util/logging.h:
