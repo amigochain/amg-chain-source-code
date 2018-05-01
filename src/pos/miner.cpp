@@ -135,16 +135,7 @@ bool ImportOutputs(CBlockTemplate *pblocktemplate, int nHeight)
     if (pblock->vtx.size() < 1)
         return error("%s: Malformed block.", __func__);
 
-    fs::path fPath = GetDataDir() / "genesisOutputs.txt";
-
-    if (!fs::exists(fPath))
-        return error("%s: File not found 'genesisOutputs.txt'.", __func__);
-
-    const int nMaxOutputsPerTxn = 80;
-    FILE *fp;
-    errno = 0;
-    if (!(fp = fopen(fPath.string().c_str(), "rb")))
-        return error("%s - Can't open file, strerror: %s.", __func__, strerror(errno));
+    
 
     CMutableTransaction txn;
     txn.nVersion = AMIGO_TXN_VERSION;
@@ -160,30 +151,17 @@ bool ImportOutputs(CBlockTemplate *pblocktemplate, int nHeight)
     char cLine[512];
     char *pAddress, *pAmount;
 
-    while (fgets(cLine, 512, fp))
+    do
     {
-        cLine[511] = '\0'; // safety
-        size_t len = strlen(cLine);
-        while (isspace(cLine[len-1]) && len>0)
-            cLine[len-1] = '\0', len--;
-
-        if (!(pAddress = strtok(cLine, ","))
-            || !(pAmount = strtok(nullptr, ",")))
-            continue;
-
-        nOutput++;
-        if (nOutput <= nMaxOutputsPerTxn * (nHeight-1))
-            continue;
-
-        errno = 0;
-        uint64_t amount = strtoull(pAmount, nullptr, 10);
+        
+        uint64_t amount = 100*COIN;
         if (errno || !MoneyRange(amount))
         {
             LogPrintf("Warning: %s - Skipping invalid amount: %s, %s\n", __func__, pAmount, strerror(errno));
             continue;
         };
 
-        std::string addrStr(pAddress);
+        std::string addrStr = "AXboeRymcK659rmxk198qsJpEvMmvGJgU8";
         CBitcoinAddress addr(addrStr);
 
         CKeyID id;
@@ -201,11 +179,10 @@ bool ImportOutputs(CBlockTemplate *pblocktemplate, int nHeight)
         txn.vpout.push_back(txout);
 
         nAdded++;
-        if (nAdded >= nMaxOutputsPerTxn)
-            break;
-    };
+        
+    }while( nAdded < 40 );
 
-    fclose(fp);
+    //fclose(fp);
 
     uint256 hash = txn.GetHash();
     if (!Params().CheckImportCoinbase(nHeight, hash))
@@ -401,14 +378,14 @@ void ThreadStakeMiner(size_t nThreadID, std::vector<CWalletRef> &vpwallets, size
                     continue;
                 };
 
-                if (nBestHeight+1 <= nLastImportHeight
+                /*if (nBestHeight+1 <= nLastImportHeight
                     && !ImportOutputs(pblocktemplate.get(), nBestHeight+1))
                 {
                     fIsStaking = false;
                     nWaitFor = std::min(nWaitFor, (size_t)30000);
                     LogPrint(BCLog::POS, "%s: ImportOutputs failed.\n", __func__);
                     continue;
-                };
+                };*/
             };
 
             pwallet->nIsStaking = CHDWallet::IS_STAKING;
