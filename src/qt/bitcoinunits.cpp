@@ -42,7 +42,7 @@ QString BitcoinUnits::longName(int unit)
     {
     case BTC: return QString("AMG");
     case mBTC: return QString("mAMG");
-    case uBTC: return QString::fromUtf8("μAMG (parts)");
+    case uBTC: return QString::fromUtf8("μAMG (amg)");
     default: return QString("???");
     }
 }
@@ -51,7 +51,7 @@ QString BitcoinUnits::shortName(int unit)
 {
     switch(unit)
     {
-    case uBTC: return QString::fromUtf8("parts");
+    case uBTC: return QString::fromUtf8("amg");
     default:   return longName(unit);
     }
 }
@@ -62,7 +62,7 @@ QString BitcoinUnits::description(int unit)
     {
     case BTC: return QString("Amigos");
     case mBTC: return QString("Milli-Amigos (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Amigos (parts) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Amigos (amg) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }

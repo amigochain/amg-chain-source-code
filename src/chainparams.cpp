@@ -422,11 +422,11 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
+        pchMessageStart[0] = 0x16;
         pchMessageStart[1] = 0xf2;
         pchMessageStart[2] = 0xef;
         pchMessageStart[3] = 0xb4;
-        nDefaultPort = 33391;
+        nDefaultPort = 33393;
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -439,24 +439,7 @@ public:
 
         nPruneAfterHeight = 100000;
 
-       /* int a =0;
-        bool fNegative;
-        bool fOverflow;
-        arith_uint256 bnTarget;
-        bnTarget.SetCompact(0x1f00ffff, &fNegative, &fOverflow);
-        do {
 
-              a = a + 1;
-              genesis = CreateGenesisBlockMainNet(1524815861, a, 0x1f00ffff);
-
-              if( UintToArith256(genesis.GetHash()) < bnTarget) {
-                 // terminate the loop
-                  consensus.hashGenesisBlock = genesis.GetHash();
-                  LogPrintf(" genesis Hash = %s , genesis.hashMerkleRoot = %s, witness = %s", genesis.GetHash().ToString(), genesis.hashMerkleRoot.ToString(), genesis.hashWitnessMerkleRoot.ToString());
-                  LogPrintf("Genesis block = %s", genesis.ToString());
-                 break;
-              }
-           } while( a < 20000000 );*/
         genesis = CreateGenesisBlockMainNet(1524815861, 107490, 0x1f00ffff); // 2017-07-17 13:00:00
         consensus.hashGenesisBlock = genesis.GetHash();
 
@@ -470,7 +453,7 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("172.168.36.3");
-		vSeeds.emplace_back("185.194.142.122");
+                vSeeds.emplace_back("86.105.1.142");
         
 
 

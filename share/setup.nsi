@@ -1,34 +1,34 @@
-Name "Amigo Core (32-bit)"
+Name "Amigo Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.16.0.@CLIENT_VERSION_AMIGO@
+!define VERSION 0.16.0.3
 !define COMPANY "Amigo Core project"
 !define URL https://amigo.io/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/d/development/projects/test/amg-chain-source-code/share/pixmaps/amigo.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/d/development/projects/test/amg-chain-source-code/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/share/pixmaps/amigo.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/d/development/projects/test/amg-chain-source-code/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Amigo Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\amigo-qt.exe
+!define MUI_FINISHPAGE_RUN $INSTDIR\amigo-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/d/development/projects/test/amg-chain-source-code/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "32" == "64"
+!if "" == "64"
 !include x64.nsh
 !endif
 
@@ -48,8 +48,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /d/development/projects/test/amg-chain-source-code/amigo-${VERSION}-win32-setup.exe
-!if "32" == "64"
+OutFile /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/amigo-${VERSION}-win-setup.exe
+!if "" == "64"
 InstallDir $PROGRAMFILES64\Amigo
 !else
 InstallDir $PROGRAMFILES\Amigo
@@ -74,14 +74,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /d/development/projects/test/amg-chain-source-code/release/amigo-qt.exe
-    File /oname=COPYING.txt /d/development/projects/test/amg-chain-source-code/COPYING
-    File /oname=readme.txt /d/development/projects/test/amg-chain-source-code/doc/README_windows.txt
+    File /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/release/amigo-qt
+    File /oname=COPYING.txt /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/COPYING
+    File /oname=readme.txt /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /d/development/projects/test/amg-chain-source-code/release/amigod.exe
-    File /d/development/projects/test/amg-chain-source-code/release/amigo-cli.exe
+    File /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/release/amigod
+    File /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/release/amigo-cli
     SetOutPath $INSTDIR\doc
-    File /r /d/development/projects/test/amg-chain-source-code/doc\*.*
+    File /r /Users/bhaskarsingh/development/B3Testnet/particle/amg-chain-source-code/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -92,8 +92,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\amigo-qt.exe
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Amigo Core (testnet, 32-bit).lnk" "$INSTDIR\amigo-qt.exe" "-testnet" "$INSTDIR\amigo-qt.exe" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\amigo-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Amigo Core (testnet, -bit).lnk" "$INSTDIR\amigo-qt" "-testnet" "$INSTDIR\amigo-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -106,8 +106,8 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "amigo" "URL Protocol" ""
     WriteRegStr HKCR "amigo" "" "URL:Amigo"
-    WriteRegStr HKCR "amigo\DefaultIcon" "" $INSTDIR\amigo-qt.exe
-    WriteRegStr HKCR "amigo\shell\open\command" "" '"$INSTDIR\amigo-qt.exe" "%1"'
+    WriteRegStr HKCR "amigo\DefaultIcon" "" $INSTDIR\amigo-qt
+    WriteRegStr HKCR "amigo\shell\open\command" "" '"$INSTDIR\amigo-qt" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -125,7 +125,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\amigo-qt.exe
+    Delete /REBOOTOK $INSTDIR\amigo-qt
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -137,7 +137,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Amigo Core (testnet, 32-bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Amigo Core (testnet, -bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\Amigo.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -159,7 +159,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "32" == "64"
+!if "" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64

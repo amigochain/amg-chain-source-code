@@ -260,7 +260,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CHDWallet
 
         if (r.nType == OUTPUT_STANDARD)
         {
-            sub.typeOut = 'P';
+            sub.typeOut = 'a';
         } else
         if (r.nType == OUTPUT_CT)
         {
